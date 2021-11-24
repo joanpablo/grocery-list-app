@@ -8,6 +8,8 @@
 .gl-products-item-content {
   flex: 1;
   margin-left: 15px;
+  display: flex;
+  flex-direction: column;
 }
 
 .gl-products-item-icon-container {

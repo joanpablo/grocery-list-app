@@ -19,4 +19,10 @@ export class ProductsComponent {
       this.products = products;
     });
   }
+
+  saveProduct(product: Product) {
+    this.productsService.saveProduct(product).subscribe((savedProduct) => {
+      this.products.splice(0, 0, savedProduct);
+    });
+  }
 }

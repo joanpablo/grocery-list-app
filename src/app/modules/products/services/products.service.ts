@@ -8,10 +8,14 @@ import { Observable, of } from 'rxjs';
 export class ProductsService {
   loadProducts(): Observable<Array<Product>> {
     const products = [];
-    for (let i = 1; i <= 100; i++) {
-      products.push({ name: `Product ${i}`, description: '', quantity: 1 });
+    for (let i = 1; i <= 5; i++) {
+      products.push({ name: `Product ${i}` });
     }
 
     return of(products);
+  }
+
+  saveProduct(product: Product): Observable<Product> {
+    return of(product);
   }
 }
