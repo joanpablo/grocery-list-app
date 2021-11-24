@@ -1,2 +1,2 @@
 <gl-products-new (onNewProduct)="saveProduct($event)"></gl-products-new>
-<gl-products-list [products]="products"></gl-products-list>
+<gl-products-list [products]="products" (onDeleteProduct)="deleteProduct($event)"></gl-products-list>

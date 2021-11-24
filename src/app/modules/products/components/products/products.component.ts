@@ -25,4 +25,13 @@ export class ProductsComponent {
       this.products.splice(0, 0, savedProduct);
     });
   }
+
+  deleteProduct(product: Product) {
+    this.productsService.deleteProduct(product).subscribe((product) => {
+      const productIndex = this.products.findIndex((p) => p.id === product.id);
+      if (productIndex >= 0) {
+        this.products.splice(productIndex, 1);
+      }
+    });
+  }
 }
