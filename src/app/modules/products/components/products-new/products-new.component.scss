@@ -1,0 +1,10 @@
+:host {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 15px;
+}
+
+mat-form-field {
+  flex: 1;
+}
