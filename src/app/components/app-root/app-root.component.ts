@@ -3,7 +3,6 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'gl-app-root',
   templateUrl: './app-root.component.html',
-  styleUrls: ['./app-root.component.scss']
+  styleUrls: ['./app-root.component.scss'],
 })
-export class AppRootComponent {
-}
+export class AppRootComponent {}
