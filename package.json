@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
+    "test": "ng test --no-watch --no-progress --browsers=ChromeHeadlessCI",
     "eslint:fix": "eslint . --ext \".ts,.js\" --fix",
     "eslint": "eslint . --ext \".ts,.js\""
   },
