@@ -1,16 +1,15 @@
-<gl-products-new (onNewProduct)="saveProduct($event)"
-                 *ngIf="!isLoading">
+<gl-products-new (onNewProduct)="saveProduct($event)" *ngIf="!isLoading">
 </gl-products-new>
 
-<gl-products-list [products]="products"
-                  (onDeleteProduct)="deleteProduct($event)"
-                  (onEditProduct)="editProduct($event)"
-                  *ngIf="isNotEmptyList">
+<gl-products-list
+  [products]="products"
+  (onDeleteProduct)="deleteProduct($event)"
+  (onEditProduct)="editProduct($event)"
+  *ngIf="isNotEmptyList"
+>
 </gl-products-list>
 
-<gl-products-list-empty *ngIf="isEmptyList">
-</gl-products-list-empty>
+<gl-products-list-empty *ngIf="isEmptyList"> </gl-products-list-empty>
 
-<gl-products-list-loading *ngIf="isLoading"
-                          label="Loading item list...">
+<gl-products-list-loading *ngIf="isLoading" label="Loading item list...">
 </gl-products-list-loading>

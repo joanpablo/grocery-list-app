@@ -1,7 +1,12 @@
 <form (submit)="addProduct(productName.value)">
   <mat-form-field appearance="standard">
     <mat-label>Add Item</mat-label>
-    <input matInput placeholder="Item name" type="text" [formControl]="productName">
+    <input
+      matInput
+      placeholder="Item name"
+      type="text"
+      [formControl]="productName"
+    />
   </mat-form-field>
 
   <button mat-icon-button aria-label="Add Product Button" type="submit">
