@@ -1,0 +1,17 @@
+<h1 mat-dialog-title>Edit Item</h1>
+<div mat-dialog-content>
+  <form [formGroup]="formGroup">
+    <mat-form-field appearance="standard">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name">
+    </mat-form-field>
+    <mat-form-field appearance="standard">
+      <mat-label>Add comments</mat-label>
+      <textarea matInput formControlName="description"></textarea>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="cancel()">Cancel</button>
+  <button mat-button (click)="save()" cdkFocusInitial color="primary">Save</button>
+</div>

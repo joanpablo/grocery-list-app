@@ -8,14 +8,14 @@ describe('ProductsItemComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ProductsItemComponent ]
-    })
-    .compileComponents();
+      declarations: [ProductsItemComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(ProductsItemComponent);
     component = fixture.componentInstance;
+    component.product = { name: 'Sample Product' };
     fixture.detectChanges();
   });
 
