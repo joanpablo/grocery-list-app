@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Product } from '../models/Product';
-import { Observable, of } from 'rxjs';
+import { concatMapTo, interval, Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -12,7 +12,7 @@ export class ProductsService {
       products.push({ name: `Product ${i}`, id: i });
     }
 
-    return of(products);
+    return interval(3000).pipe(concatMapTo(of(products)));
   }
 
   saveProduct(product: Product): Observable<Product> {

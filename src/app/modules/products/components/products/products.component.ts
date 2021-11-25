@@ -11,6 +11,7 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class ProductsComponent {
   products: Array<Product> = [];
+  isLoading = true;
 
   constructor(
     private productsService: ProductsService,
@@ -19,9 +20,19 @@ export class ProductsComponent {
     this.loadProducts();
   }
 
+  get isEmptyList(): boolean {
+    return !this.isLoading && this.products.length === 0;
+  }
+
+  get isNotEmptyList(): boolean {
+    return !this.isLoading && this.products.length > 0;
+  }
+
   private loadProducts() {
+    this.isLoading = true;
     this.productsService.loadProducts().subscribe((products) => {
       this.products = products;
+      this.isLoading = false;
     });
   }
 

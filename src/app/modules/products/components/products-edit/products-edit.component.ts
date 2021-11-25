@@ -1,10 +1,15 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Product } from '../../models/Product';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 
 @Component({
-  selector: 'app-products-edit',
+  selector: 'gl-products-edit',
   templateUrl: './products-edit.component.html',
   styleUrls: ['./products-edit.component.scss'],
 })
@@ -22,11 +27,20 @@ export class ProductsEditComponent {
     });
   }
 
+  get name(): FormControl {
+    return this.formGroup.get('name') as FormControl;
+  }
+
   cancel(): void {
     this.dialogRef.close();
   }
 
   save(): void {
+    if (this.formGroup.invalid) {
+      this.formGroup.markAllAsTouched();
+      return;
+    }
+
     this.dialogRef.close({
       id: this.product.id,
       ...this.formGroup.value,

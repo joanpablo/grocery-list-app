@@ -8,6 +8,8 @@ import { ProductsListComponent } from './components/products-list/products-list.
 import { ProductsItemComponent } from './components/products-item/products-item.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ProductsEditComponent } from './components/products-edit/products-edit.component';
+import { ProductsListEmptyComponent } from './components/products-list-empty/products-list-empty.component';
+import { ProductsListLoadingComponent } from './components/products-list-loading/products-list-loading.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { ProductsEditComponent } from './components/products-edit/products-edit.
     ProductsListComponent,
     ProductsItemComponent,
     ProductsEditComponent,
+    ProductsListEmptyComponent,
+    ProductsListLoadingComponent,
   ],
   imports: [
     CommonModule,

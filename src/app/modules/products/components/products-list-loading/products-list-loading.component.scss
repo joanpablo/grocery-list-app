@@ -1,0 +1,17 @@
+:host {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  width: 70px;
+  height: 70px;
+}
+
+.gl-products-list-loading-label {
+  font-size: 0.8em;
+  color: gray;
+}
