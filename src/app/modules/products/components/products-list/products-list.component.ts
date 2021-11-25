@@ -11,7 +11,13 @@ export class ProductsListComponent {
 
   @Output() onDeleteProduct = new EventEmitter<Product>();
 
-  deleteProduct(product: Product) {
+  @Output() onEditProduct = new EventEmitter<Product>();
+
+  deleteProduct(product: Product): void {
     this.onDeleteProduct.next(product);
+  }
+
+  editProduct(product: Product): void {
+    this.onEditProduct.next(product);
   }
 }

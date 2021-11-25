@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Product } from '../../models/Product';
 import { ProductsService } from '../../services/products.service';
+import { ProductsEditComponent } from '../products-edit/products-edit.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'gl-products',
@@ -10,7 +12,10 @@ import { ProductsService } from '../../services/products.service';
 export class ProductsComponent {
   products: Array<Product> = [];
 
-  constructor(private productsService: ProductsService) {
+  constructor(
+    private productsService: ProductsService,
+    private dialog: MatDialog
+  ) {
     this.loadProducts();
   }
 
@@ -32,6 +37,16 @@ export class ProductsComponent {
       if (productIndex >= 0) {
         this.products.splice(productIndex, 1);
       }
+    });
+  }
+
+  editProduct(product: Product) {
+    const dialogRef = this.dialog.open(ProductsEditComponent, {
+      data: product,
+    });
+
+    dialogRef.afterClosed().subscribe((product) => {
+      console.log(product);
     });
   }
 }
