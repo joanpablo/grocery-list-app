@@ -46,7 +46,18 @@ export class ProductsComponent {
     });
 
     dialogRef.afterClosed().subscribe((product) => {
-      console.log(product);
+      if (product) {
+        this.productsService
+          .updateProduct(product)
+          .subscribe((updatedProduct) => this.onProductUpdated(updatedProduct));
+      }
     });
+  }
+
+  private onProductUpdated(product: Product) {
+    const index = this.products.findIndex((p) => p.id === product.id);
+    if (index >= 0) {
+      this.products.splice(index, 1, product);
+    }
   }
 }
