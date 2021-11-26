@@ -18,8 +18,8 @@ export class ProductsService {
     return this.http.post<Product>(environment.apiUrl, product);
   }
 
-  deleteProduct(product: Product): Observable<void> {
-    return this.http.delete<void>(`${environment.apiUrl}/${product.id}`);
+  deleteProduct(product: Product): Observable<Product> {
+    return this.http.delete<Product>(`${environment.apiUrl}/${product.id}`);
   }
 
   updateProduct(product: Product): Observable<Product> {
