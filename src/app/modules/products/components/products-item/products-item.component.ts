@@ -11,7 +11,8 @@ export class ProductsItemComponent {
 
   @Output() onDelete = new EventEmitter<Product>();
 
-  delete(product: Product) {
+  delete($event: MouseEvent, product: Product) {
+    $event.stopPropagation();
     this.onDelete.next(product);
   }
 }

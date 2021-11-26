@@ -43,7 +43,7 @@ export class ProductsComponent {
   }
 
   deleteProduct(product: Product) {
-    this.productsService.deleteProduct(product).subscribe((product) => {
+    this.productsService.deleteProduct(product).subscribe(() => {
       const productIndex = this.products.findIndex((p) => p.id === product.id);
       if (productIndex >= 0) {
         this.products.splice(productIndex, 1);

@@ -1,29 +1,31 @@
 import { Injectable } from '@angular/core';
 import { Product } from '../models/Product';
-import { concatMapTo, interval, Observable, of } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../../environments/environment';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductsService {
-  loadProducts(): Observable<Array<Product>> {
-    const products = [];
-    for (let i = 1; i <= 5; i++) {
-      products.push({ name: `Product ${i}`, id: i });
-    }
+  constructor(private http: HttpClient) {}
 
-    return interval(3000).pipe(concatMapTo(of(products)));
+  loadProducts(): Observable<Array<Product>> {
+    return this.http.get<Array<Product>>(environment.apiUrl);
   }
 
   saveProduct(product: Product): Observable<Product> {
-    return of(product);
+    return this.http.post<Product>(environment.apiUrl, product);
   }
 
-  deleteProduct(product: Product): Observable<Product> {
-    return of(product);
+  deleteProduct(product: Product): Observable<void> {
+    return this.http.delete<void>(`${environment.apiUrl}/${product.id}`);
   }
 
   updateProduct(product: Product): Observable<Product> {
-    return of(product);
+    return this.http.put<Product>(
+      `${environment.apiUrl}/${product.id}`,
+      product
+    );
   }
 }
