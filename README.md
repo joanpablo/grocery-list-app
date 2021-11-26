@@ -1,6 +1,6 @@
 # GroceryList
 
-![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/joanpablo/grocery-list-app/grocery-list/master?style=for-the-badge)
+![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/joanpablo/grocery-list-app/grocery-list/master?style=flat) ![angular](https://badges.aleen42.com/src/angular.svg)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.3.
 
