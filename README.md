@@ -20,4 +20,4 @@ Run `ng test` to execute tests via [Karma](https://karma-runner.github.io).
 
 ##  Build Docker image
 
-Run `docker build .` to build the docker image
+Run `docker build -t grocery-list-app .` to build the docker image
