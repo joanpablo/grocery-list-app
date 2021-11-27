@@ -8,6 +8,10 @@ import { AppShellComponent } from './components/app-shell/app-shell.component';
 import { SharedModule } from './modules/shared/shared.module';
 import { AppHeaderComponent } from './components/app-header/app-header.component';
 
+
+/**
+ * This is the main module of the application.
+ */
 @NgModule({
   declarations: [AppRootComponent, AppShellComponent, AppHeaderComponent],
   imports: [

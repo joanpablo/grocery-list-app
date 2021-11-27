@@ -11,6 +11,11 @@ import { ProductsEditComponent } from './components/products-edit/products-edit.
 import { ProductsListEmptyComponent } from './components/products-list-empty/products-list-empty.component';
 import { ProductsListLoadingComponent } from './components/products-list-loading/products-list-loading.component';
 
+
+/**
+ * This module contains the main features related to products like create, edit, delete, and list the products of
+ * the grocery list.
+ */
 @NgModule({
   declarations: [
     ProductsComponent,

@@ -8,6 +8,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatRippleModule } from '@angular/material/core';
 import { MatDialogModule } from '@angular/material/dialog';
 
+/**
+ * This is a module that exports common UI components from Angular Material library.
+ */
 @NgModule({
   declarations: [],
   imports: [

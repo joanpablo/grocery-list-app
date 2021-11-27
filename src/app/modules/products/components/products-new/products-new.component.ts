@@ -2,6 +2,9 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Product } from '../../models/Product';
 
+/**
+ * Component that represents the Form to create e new Product.
+ */
 @Component({
   selector: 'gl-products-new',
   templateUrl: './products-new.component.html',

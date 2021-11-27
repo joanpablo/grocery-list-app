@@ -3,7 +3,7 @@
   [product]="product"
   matRipple
   [matRippleCentered]="true"
-  (onDelete)="deleteProduct($event)"
-  (click)="editProduct(product);"
+  (onDelete)="notifyOnDeleteProduct($event)"
+  (click)="notifyOnEditProduct(product)"
 >
 </gl-products-item>

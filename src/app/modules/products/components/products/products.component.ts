@@ -43,12 +43,14 @@ export class ProductsComponent {
   }
 
   deleteProduct(product: Product) {
-    this.productsService.deleteProduct(product).subscribe((product) => {
-      const productIndex = this.products.findIndex((p) => p.id === product.id);
-      if (productIndex >= 0) {
-        this.products.splice(productIndex, 1);
-      }
-    });
+    if (product.id != null) {
+      this.productsService.deleteProduct(product.id).subscribe((product) => {
+        const productIndex = this.products.findIndex((p) => p.id === product.id);
+        if (productIndex >= 0) {
+          this.products.splice(productIndex, 1);
+        }
+      });
+    }
   }
 
   editProduct(product: Product) {
