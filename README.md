@@ -6,6 +6,16 @@ This is a simple Angular application for the Grocery List.
 
 It allows you to create, update, and delete products of the grocery list.
 
+## Running unit tests
+
+Run `ng test` to execute tests via [Karma](https://karma-runner.github.io).
+
+You can find some tests created to **ProductsService** and **ProductsComponent** in files
+```
+scr/app/modules/products/services/products.service.spec.ts
+scr/app/modules/products/components/products/products.component.spec.ts
+```
+
 ## Development server
 
 Run `ng serve --open` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
@@ -14,10 +24,4 @@ Run `ng serve --open` for a dev server. Navigate to `http://localhost:4200/`. Th
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
 
-Run `ng test` to execute tests via [Karma](https://karma-runner.github.io).
-
-##  Build Docker image
-
-Run `docker build -t grocery-list-app .` to build the docker image
